@@ -1,5 +1,6 @@
 <script setup>
 import { defineProps } from "vue";
+import avatarImage from "@/assets/images/user.png";
 
 const props = defineProps({
   userData: {
@@ -52,8 +53,8 @@ const resolveUserStatusVariant = (stat) => {
       <!-- User -->
       <template #item.username="{ item }">
         <div class="d-flex align-center" style="gap: 15px">
-          <v-avatar size="34" :variant="!item.avatar ? 'tonal' : undefined">
-            <v-img v-if="item.avatar" :src="item.avatar" />
+          <v-avatar size="34">
+            <v-img :src="avatarImage" />
           </v-avatar>
 
           <div class="d-flex flex-column">

@@ -99,7 +99,7 @@
           </v-col>
         </v-row>
         <v-row v-if="activeTab === 'dashboard'" justify="center">
-          <v-col cols="7">
+          <v-col cols="7" lg="7" md="7" sm="12">
             <UserTable :userData="users" />
           </v-col>
         </v-row>

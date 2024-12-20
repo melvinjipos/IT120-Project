@@ -28,7 +28,7 @@
   </v-container>
 
   <v-dialog v-model="showRegister" persistent>
-    <v-row justify="end" align="end">
+    <v-row justify="center" align="center">
       <v-col cols="10" lg="4" md="6" sm="6">
         <register-form v-model="showRegister" class="px-10">
           <template #footer>
@@ -56,5 +56,9 @@ const switchToRegister = () => (showRegister.value = true);
   height: 100vh;
   width: auto;
   overflow: hidden;
+}
+
+:deep(.v-overlay__scrim) {
+  background-color: #9575cd !important; /* Change to your desired color */
 }
 </style>

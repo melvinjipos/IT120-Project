@@ -13,7 +13,7 @@
                 v-for="user in filteredUsers"
                 :key="user.id"
                 @click="selectReceiver(user)"
-                class="my-2"
+                class="my-2 ps-8"
                 :class="{
                   'selected-user':
                     selectedReceiver && selectedReceiver.id === user.id,

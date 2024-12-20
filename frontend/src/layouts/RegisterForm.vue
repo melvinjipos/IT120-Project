@@ -4,45 +4,59 @@
     <v-form ref="form" @submit.prevent="handleRegister">
       <v-text-field
         v-model="username"
-        color="blue-lighten-2"
         label="Username"
+        placeholder="JohnDoe"
+        color="deep-purple-lighten-2"
+        variant="outlined"
         required
-        outlined
       />
       <v-text-field
         v-model="email"
-        color="blue-lighten-2"
         label="Email"
+        placeholder="example@gmail.com"
         type="email"
+        color="deep-purple-lighten-2"
+        variant="outlined"
         required
-        outlined
       />
       <v-text-field
         v-model="password"
-        color="blue-lighten-2"
         label="Password"
+        placeholder="············"
         type="password"
+        color="deep-purple-lighten-2"
+        variant="outlined"
         required
-        outlined
       />
       <v-text-field
         v-model="confirmPassword"
-        color="blue-lighten-2"
         label="Confirm Password"
+        placeholder="············"
         type="password"
+        color="deep-purple-lighten-2"
+        variant="outlined"
         required
-        outlined
       />
       <v-radio-group v-model="registerAs" row>
-        <v-radio label="Superuser" value="superuser"></v-radio>
-        <v-radio label="Staff" value="staff"></v-radio>
+        <v-radio
+          label="Superuser"
+          value="superuser"
+          color="deep-purple-lighten-2"
+        ></v-radio>
+        <v-radio
+          label="Staff"
+          value="staff"
+          color="deep-purple-lighten-2"
+        ></v-radio>
       </v-radio-group>
       <v-row class="pb-10 pt-2">
         <v-col>
           <v-btn @click="handleBack" color="grey-darken-2" block>Back</v-btn>
         </v-col>
         <v-col>
-          <v-btn type="submit" color="primary" block>Submit</v-btn>
+          <v-btn type="submit" color="deep-purple-lighten-2" block
+            >Submit</v-btn
+          >
         </v-col>
       </v-row>
     </v-form>
@@ -110,6 +124,4 @@ export default {
 };
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

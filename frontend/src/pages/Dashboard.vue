@@ -3,7 +3,9 @@
     <!-- Top Navigation Bar -->
     <v-app-bar app color="#151515" class="px-5">
       <!-- App Title -->
-      <v-toolbar-title class="text-h5 font-weight-black">Title</v-toolbar-title>
+      <v-toolbar-title class="text-h5 font-weight-black"
+        >Sender</v-toolbar-title
+      >
 
       <!-- Navigation Tabs -->
       <v-tabs v-model="activeTab" class="mx-5" color="deep-purple-lighten-2">

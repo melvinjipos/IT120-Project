@@ -31,7 +31,11 @@
 
       <!-- remember me checkbox -->
       <div class="d-flex align-center justify-space-between flex-wrap mb-3">
-        <v-checkbox class="d-flex align-center" label="Remember me" />
+        <v-checkbox
+          class="d-flex align-center"
+          color="deep-purple-lighten-2"
+          label="Remember me"
+        />
         <a class="text-deep-purple-lighten-2" href="javascript:void(0)">
           Forgot Password?
         </a>

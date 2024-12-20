@@ -1,7 +1,6 @@
 <script setup>
 import { defineProps } from "vue";
 
-
 const props = defineProps({
   userData: {
     type: Array,
@@ -43,12 +42,12 @@ const resolveUserStatusVariant = (stat) => {
 </script>
 
 <template>
-  <v-card>
+  <v-card class="bg" elevation="10">
     <v-data-table
       :headers="headers"
       :items="userData"
       item-value="id"
-      class="text-no-wrap"
+      class="text-no-wrap bg"
     >
       <!-- User -->
       <template #item.username="{ item }">
@@ -82,7 +81,7 @@ const resolveUserStatusVariant = (stat) => {
           size="small"
           class="text-capitalize"
         >
-          {{ item.is_superuser ? 'True' : 'False' }}
+          {{ item.is_superuser ? "True" : "False" }}
         </v-chip>
       </template>
 
@@ -93,7 +92,7 @@ const resolveUserStatusVariant = (stat) => {
           size="small"
           class="text-capitalize"
         >
-          {{ item.is_staff ? 'True' : 'False' }}
+          {{ item.is_staff ? "True" : "False" }}
         </v-chip>
       </template>
 
@@ -101,3 +100,15 @@ const resolveUserStatusVariant = (stat) => {
     </v-data-table>
   </v-card>
 </template>
+
+<style scoped>
+.bg {
+  /* From https://css.glass */
+  background: rgba(149, 117, 205, 0.042);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(149, 117, 205, 0.3);
+}
+</style>

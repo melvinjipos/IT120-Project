@@ -82,7 +82,7 @@
             <v-card class="bg-card">
               <!-- count total user -->
               <v-container class="px-12 py-8">
-                <h1>10</h1>
+                <h1>{{ totalUsers }}</h1>
                 <h4 class="font-weight-regular">User</h4>
               </v-container>
             </v-card>
@@ -92,7 +92,7 @@
             <v-card class="bg-card">
               <!-- count total admin -->
               <v-container class="px-12 py-8">
-                <h1>0</h1>
+                <h1>{{ totalAdmins }}</h1>
                 <h4 class="font-weight-regular">Admin</h4>
               </v-container>
             </v-card>
@@ -122,6 +122,8 @@ import ChatBox from "@/components/ChatBox.vue"; // Import ChatBox component
 import avatarImage from "@/assets/images/user.png";
 
 const users = ref([]);
+const totalUsers = ref(0);
+const totalAdmins = ref(0);
 const activeTab = ref(localStorage.getItem("activeTab") || "dashboard"); // Retrieve activeTab from local storage
 
 const fetchUsers = async () => {
@@ -144,12 +146,29 @@ const fetchUsers = async () => {
   }
 };
 
+const fetchUserCounts = async () => {
+  try {
+    const response = await axios.get("http://127.0.0.1:8000/api/user-counts/", {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+      },
+    });
+    totalUsers.value = response.data.total_users;
+    totalAdmins.value = response.data.total_admins;
+  } catch (err) {
+    console.error("Error fetching user counts:", err.message);
+  }
+};
+
 const logout = () => {
   const authStore = useAuthStore();
   authStore.logout(); // Clear the auth token in Pinia store
 };
 
-onMounted(fetchUsers);
+onMounted(() => {
+  fetchUsers();
+  fetchUserCounts();
+});
 
 // Watch for changes in activeTab and save it to local storage
 watch(activeTab, (newTab) => {

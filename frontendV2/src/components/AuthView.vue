@@ -1,11 +1,10 @@
 <template>
-<v-container fluid>
-  <br> <br> <br> <br> <br>
-  <v-row  justify="center" align="center">
-    <v-col cols="2">
-     
-    </v-col>
-      <v-col  cols="4">
+  <v-container fluid>
+    <br />
+    <br />
+    <br />
+    <v-row justify="center" align="center">
+      <v-col cols="4">
         <login-form class="px-10">
           <template #footer>
             <v-card-text class="text-center mt-3 mb-5">
@@ -13,7 +12,7 @@
                 Don't have an account?
               </span>
               <span
-                class="text-blue-lighten-2 text-decoration-none cursor-pointer"
+                class="text-teal-lighten-2 text-decoration-none cursor-pointer"
                 @click="switchToRegister"
               >
                 Register
@@ -22,14 +21,14 @@
           </template>
         </login-form>
       </v-col>
-      <v-col cols="2">
-     
+      <v-col cols="5">
+        <img src="@/assets/images/1.png" alt="" width="600" />
       </v-col>
     </v-row>
-</v-container>
+  </v-container>
 
   <v-dialog v-model="showRegister" persistent>
-    <v-row justify="end" align="end">
+    <v-row justify="center" align="center">
       <v-col cols="10" lg="4" md="6" sm="6">
         <register-form v-model="showRegister" class="px-10">
           <template #footer>
@@ -46,7 +45,6 @@ import { ref } from "vue";
 import LoginForm from "@/layouts/LoginForm.vue";
 import RegisterForm from "@/layouts/RegisterForm.vue";
 
-
 const showRegister = ref(false);
 
 const switchToRegister = () => (showRegister.value = true);
@@ -60,4 +58,7 @@ const switchToRegister = () => (showRegister.value = true);
   overflow: hidden;
 }
 
+:deep(.v-overlay__scrim) {
+  background-color: #4db6ac !important; /* Change to your desired color */
+}
 </style>
